@@ -20,7 +20,6 @@ static struct work_struct ksu_update_uid_work;
 struct uid_data {
 	struct list_head list;
 	u32 uid;
-	char package[KSU_MAX_PACKAGE_NAME];
 };
 
 static bool is_uid_exist(uid_t uid, char *package, void *data)
