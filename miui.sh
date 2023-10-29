@@ -50,16 +50,16 @@ KERNEL_NAME="X-Derm"
 DEFCONFIG="sweet_defconfig"
 AnyKernel="https://github.com/RooGhz720/Anykernel3"
 AnyKernelbranch="master"
-HOSST="MyLabs"
-USEER="RooGhz720"
-ID="25"
+HOSST="root"
+USEER="fchelz"
+#ID="25"
 MESIN="Git Workflows"
 
 # clang config
-REMOTE="https://gitlab.com"
-TARGET="RooGhz720"
-REPO="android_prebuilts_clang_host_linux-x86_clang-r487747b"
-BRANCH="master"
+#REMOTE="https://gitlab.com"
+#TARGET="RooGhz720"
+#REPO="android_prebuilts_clang_host_linux-x86_clang-r487747b"
+#BRANCH="master"
 
 # setup telegram env
 export WAKTU=$(date +"%T")
