@@ -39,8 +39,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 # MIUI = High Dimens
 # OSS = Low Dimens
-API_BOT="6787166379:AAGXuTzT49V0DdAzLiRB4Lj3PUsVQWkIiJM"
-CHATID="-4064889762"
+
 export CHATID API_BOT TYPE_KERNEL
 
 # Kernel build config
