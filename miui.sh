@@ -51,7 +51,7 @@ DEFCONFIG="sweet_defconfig"
 AnyKernel="https://github.com/RooGhz720/Anykernel3"
 AnyKernelbranch="master"
 HOSST="root"
-USEER="fchelz"
+USEER="Fchelz"
 #ID="25"
 MESIN="Git Workflows"
 
@@ -105,6 +105,9 @@ tg_error() {
 #		git clone --depth=1 -b "$BRANCH" "$REMOTE"/"$TARGET"/"$REPO" "$HOME"/clang
 #		git clone --depth=1 -b lineage-19.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git "$HOME"/clang/aarch64-linux-android-4.9
 #		git clone --depth=1 -b lineage-19.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git "$HOME"/clang/arm-linux-androideabi-4.9
+export PATH="$HOME/cosmic/bin:$PATH"
+export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
+
 if ! [ -d "$HOME/cosmic" ]; then
 echo "Cosmic clang not found! Cloning..."
 if ! git clone -q https://gitlab.com/PixelOS-Devices/playgroundtc.git --depth=1 -b 17 ~/cosmic; then ## ini Clang nya tools untu>
@@ -112,8 +115,8 @@ echo "Cloning failed! Aborting..."
 exit 1
 fi
 fi
-	export PATH="$HOME/cosmic/bin:$PATH"
-	export KBUILD_COMPILER_STRING=$("$HOME"/cosmic/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')
+#	export PATH="$HOME/cosmic/bin:$PATH"
+#	export KBUILD_COMPILER_STRING=$("$HOME"/cosmic/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')
 
 # Setup build process
 
