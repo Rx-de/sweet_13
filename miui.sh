@@ -46,7 +46,7 @@ export CHATID API_BOT TYPE_KERNEL
 # Kernel build config
 TYPE="MIUI"
 DEVICE="Redmi note 10 pro"
-KERNEL_NAME="AGHISNA"
+KERNEL_NAME="X-Derm"
 DEFCONFIG="sweet_defconfig"
 AnyKernel="https://github.com/RooGhz720/Anykernel3"
 AnyKernelbranch="master"
@@ -194,7 +194,7 @@ TEXT1="
 * System Build* : \`$MESIN\`
 * Date Build* : \`$TGL\` \`$WAKTU\`
 * Last Commit* : \`$KOMIT\`
-* Author* : @RooGhz720
+* Author* : @fchelz
 ━━━━━━━━━ஜ۩۞۩ஜ━━━━━━━━
 "
 
