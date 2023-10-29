@@ -115,8 +115,6 @@ echo "Cloning failed! Aborting..."
 exit 1
 fi
 fi
-#	export PATH="$HOME/cosmic/bin:$PATH"
-#	export KBUILD_COMPILER_STRING=$("$HOME"/cosmic/bin/clang --version | head -n 1 | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')
 
 # Setup build process
 
