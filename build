@@ -149,16 +149,15 @@ TEXT1="
 * Device* : \`$DEVICE\`
 * Code name* : \`Sweet | Sweetin\`
 * Variant Build* : \`$TYPE\`
-* Time Build* : \`$(($Diff / 60)) menit\`
+* Time Build* : \`$(($DIFF / 60)) menit\`
 * Branch Build* : \`$BRANCH\`
 * System Build* : \`$MESIN\`
 * Date Build* : \`$TGL\` \`$WAKTU\`
 * Last Commit* : \`$KOMIT\`
 * Author* : @fchelz
-━━━━━━━━━ஜ۩۞۩ஜ━━━━━━━━
-"
+━━━━━━━━━ஜ۩۞۩ஜ━━━━━━━━"
 
 		tg_sticker "CAACAgUAAxkBAAGLlS1jnv1FJAsPoU7-iyZf75TIIbD0MQACYQIAAvlQCFTxT3DFijW-FSwE"
                 tg_post_msg "$TEXT1" "$CHATID"
-                tg_post_build "$FINAL_KERNEL_ZIP"-signed.zip "$CHATID"
+                tg_post_build "$FINAL_KERNEL_ZIP" "$CHATID"
 exit
