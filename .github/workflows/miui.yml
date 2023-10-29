@@ -25,8 +25,4 @@ jobs:
           chmod +x miui.sh
           bash miui.sh
       shell: bash
-      env:
-         CHATID: ${{ secrets.CHAT_ID }}
-         API_BOT: ${{ secrets.BOT_API }}
-         TYPE_KERNEL: ${{ secrets.EZA }}
 
