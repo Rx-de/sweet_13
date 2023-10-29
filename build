@@ -7,8 +7,8 @@ KERNEL_DEFCONFIG=sweet_defconfig ## Ini defconfignya setiap type hape beda2 (red
 ANYKERNEL3_DIR=$PWD/AnyKernel3/ ## ini anykernel nya gunanya untuk membukus hasil compile untuk siap flash
 FINAL_KERNEL_ZIP=X-Derm-Kernel-$(date '+%Y%m%d').zip ## INI NAMA KERNEL zip NYA
 # setup telegram env
-API_BOT="6787166379:AAGXuTzT49V0DdAzLiRB4Lj3PUsVQWkIiJM"
-CHATID="-4064889762"
+
+
 export CHATID API_BOT TYPE_KERNEL
 export WAKTU=$(date +"%T")
 export TGL=$(date +"%d-%m-%Y")
