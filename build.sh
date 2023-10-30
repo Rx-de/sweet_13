@@ -15,7 +15,8 @@ git clone --depth=1 -b master https://github.com/RooGhz720/Anykernel3.git AnyKer
 
 if ! [ -d "$HOME/cosmic" ]; then
 echo "Cosmic clang not found! Cloning..."
-if ! git clone -q https://gitlab.com/PixelOS-Devices/playgroundtc.git --depth=1 -b 17 ~/cosmic; then ## ini Clang nya tools untuk membangun/compile kernel nya (tidak semua kernel mendukung clang)
+#if ! git clone -q https://gitlab.com/PixelOS-Devices/playgroundtc.git --depth=1 -b 17 ~/cosmic; then ## ini Clang nya tools untuk membangun/compile kernel nya (tidak semua kernel mendukung clang)
+if ! git clone -q https://gitlab.com/GhostMaster69-dev/cosmic-clang.git --depth=1 -b master ~/cosmic; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi

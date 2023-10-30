@@ -40,6 +40,8 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 # MIUI = High Dimens
 # OSS = Low Dimens
 
+API_BOT="6787166379:AAGXuTzT49V0DdAzLiRB4Lj3PUsVQWkIiJM"
+CHATID="-4064889762"
 export CHATID API_BOT TYPE_KERNEL
 
 # Kernel build config
@@ -109,7 +111,7 @@ export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | 
 
 if ! [ -d "$HOME/cosmic" ]; then
 echo "Cosmic clang not found! Cloning..."
-if ! git clone -q https://gitlab.com/PixelOS-Devices/playgroundtc.git --depth=1 -b 17 ~/cosmic; then ## ini Clang nya tools untu>
+if ! git clone -q https://gitlab.com/GhostMaster69-dev/cosmic-clang.git --depth=1 -b master ~/cosmic; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi
