@@ -1,12 +1,17 @@
-name: kntl
-on: [push]
+name: tmate session
+
+on:
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup tmate session
+    - uses: actions/checkout@v2
+    - run: sudo touch /continue
+    
+    - name: Open SSH Session
       uses: mxschmitt/action-tmate@v3
-      timeout-minutes: 15000
-      with:
-        detached: true
+      
+    - name: Block to allow introspection of failures
+      run: sleep infinity
