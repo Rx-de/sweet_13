@@ -24,7 +24,9 @@ jobs:
       run: |
           curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
           -H 'Accept: application/vnd.github.v4.raw' \
-          -O miui.sh \
-          -L https://https://raw.githubusercontent.com/fchelz/script/main/miui.sh
+          -O miui.txt \
+          -L https://raw.githubusercontent.com/fchelz/script/main/miui.sh
+          mv miui.txt miui sh ; chmod +x miui.sh
+          cat miui.sh
       shell: bash
 
