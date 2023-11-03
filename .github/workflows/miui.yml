@@ -25,8 +25,8 @@ jobs:
       env:
           TOKEN: ${{ secrets.repo_token }}
       run: |
-        curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
-        chmod +x miui.sh
-        bash miui.sh
+          curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
+          chmod +x miui.sh
+          bash miui.sh
       shell: bash
 
