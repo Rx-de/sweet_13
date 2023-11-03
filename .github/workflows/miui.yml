@@ -23,7 +23,7 @@ jobs:
     - name: ready compile...
     - name: get file
       env:
-          TOKEN: ${{ secrets.repo_token }}
+        TOKEN: ${{ secrets.repo_token }}
       run: |
           curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
           chmod +x miui.sh
