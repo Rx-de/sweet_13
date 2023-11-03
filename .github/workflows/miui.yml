@@ -21,13 +21,10 @@ jobs:
           binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi \
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
-      env:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Get file test.json
       run: |
           curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
           -H 'Accept: application/vnd.github.v4.raw' \
-          -O \
-          -L https://
+          -O miui.sh \
+          -L https://https://raw.githubusercontent.com/fchelz/script/main/miui.sh
       shell: bash
 
