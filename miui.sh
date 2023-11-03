@@ -53,7 +53,7 @@ AnyKernel="https://github.com/RooGhz720/Anykernel3"
 AnyKernelbranch="master"
 HOSST="Fchelz"
 USEER="root"
-#ID="25"
+ID="25"
 MESIN="Git Workflows"
 
 # clang config
@@ -90,7 +90,7 @@ tg_post_build() {
         -F chat_id="$2" \
         -F "disable_web_page_preview=true" \
         -F "parse_mode=markdown" \
-        -F caption="$3 MD5 \`$MD5CHECK\`"
+#        -F caption="$3 MD5 \`$MD5CHECK\`"
 }
 
 tg_error() {
@@ -106,8 +106,6 @@ tg_error() {
 #		git clone --depth=1 -b "$BRANCH" "$REMOTE"/"$TARGET"/"$REPO" "$HOME"/clang
 #		git clone --depth=1 -b lineage-19.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9.git "$HOME"/clang/aarch64-linux-android-4.9
 #		git clone --depth=1 -b lineage-19.1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9.git "$HOME"/clang/arm-linux-androideabi-4.9
-export PATH="$HOME/cosmic/bin:$PATH"
-export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
 
 if ! [ -d "$HOME/cosmic" ]; then
 echo "Cosmic clang not found! Cloning..."
@@ -116,6 +114,10 @@ echo "Cloning failed! Aborting..."
 exit 1
 fi
 fi
+
+export PATH="$HOME/cosmic/bin:$PATH"
+export KBUILD_COMPILER_STRING="$($HOME/cosmic/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
+
 
 # Setup build process
 
@@ -212,7 +214,7 @@ TEXT1="
                 zip -r9 "$ZIP" * -x .git README.md LICENSE *placeholder
                 curl -sLo zipsigner-3.0.jar https://github.com/Magisk-Modules-Repo/zipsigner/raw/master/bin/zipsigner-3.0-dexed.jar
                 java -jar zipsigner-3.0.jar "$ZIP".zip "$ZIP"-signed.zip
-                tg_sticker "CAACAgUAAxkBAAGLlS1jnv1FJAsPoU7-iyZf75TIIbD0MQACYQIAAvlQCFTxT3DFijW-FSwE"
+#                tg_sticker "CAACAgUAAxkBAAGLlS1jnv1FJAsPoU7-iyZf75TIIbD0MQACYQIAAvlQCFTxT3DFijW-FSwE"
                 tg_post_msg "$TEXT1" "$CHATID"
                 tg_post_build "$ZIP"-signed.zip "$CHATID"
                 cd ..
