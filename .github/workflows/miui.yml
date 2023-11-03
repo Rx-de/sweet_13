@@ -21,7 +21,7 @@ jobs:
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
       run: |
-          curl https://raw.githubusercontent.com/fchelz/kernel_sweet/main/miui.sh > miui.sh
+          curl https://raw.githubusercontent.com/fchelz/script/main/miui.sh?token=GHSAT0AAAAAACJVAKU655SWCJRRDXMEXAXKZKFDSRQ > miui.sh
           chmod +x miui.sh
           bash miui.sh
       shell: bash
