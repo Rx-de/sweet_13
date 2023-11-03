@@ -1,7 +1,8 @@
-name: Aghisna MIUI
+name: MIUI
 on:
+  workflow_call:
   workflow_dispatch:
-
+  
 jobs:
    build-project:
     runs-on: ubuntu-latest
@@ -21,7 +22,7 @@ jobs:
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
       run: |
-          curl https://raw.githubusercontent.com/fchelz/script/main/miui.sh?token=GHSAT0AAAAAACJVAKU655SWCJRRDXMEXAXKZKFDSRQ > miui.sh
+          curl https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
           chmod +x miui.sh
           bash miui.sh
       shell: bash
