@@ -21,12 +21,11 @@ jobs:
           binutils-aarch64-linux-gnu binutils-arm-linux-gnueabi \
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
-    - name: get file
       env:
         TOKEN: ${{ secrets.repo_token }}
       run: |
-          curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
-          chmod +x miui.sh
-          bash miui.sh
+        curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
+        chmod +x miui.sh
+        bash miui.sh
       shell: bash
 
