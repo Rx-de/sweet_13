@@ -23,9 +23,11 @@ jobs:
     - name: ready compile...
       env:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Get file test.json
       run: |
-        curl -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh
-        chmod +x miui.sh
-        bash miui.sh
+          curl -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' \
+          -H 'Accept: application/vnd.github.v4.raw' \
+          -O \
+          -L https://
       shell: bash
 
