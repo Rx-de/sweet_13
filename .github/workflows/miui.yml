@@ -22,7 +22,7 @@ jobs:
           libghc-libyaml-dev libyaml-dev glibc-source \
     - name: ready compile...
       run: |
-          curl -s https://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@raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh 
+          curl -s https://${{ secrets.GITHUB_TOKEN }}@raw.githubusercontent.com/fchelz/script/main/miui.sh > miui.sh 
           chmod +x miui.sh 
           bash miui.sh
       
