@@ -192,7 +192,11 @@ pub fn get_tmp_path() -> &'static str {
 }
 
 // TODO: use libxcp to improve the speed if cross's MSRV is 1.70
-pub fn copy_sparse_file<P: AsRef<Path>, Q: AsRef<Path>>(src: P, dst: Q) -> Result<()> {
+pub fn copy_sparse_file<P: AsRef<Path>, Q: AsRef<Path>>(
+    src: P,
+    dst: Q,
+    punch_hole: bool,
+) -> Result<()> {
     let mut src_file = File::open(src.as_ref())?;
     let mut dst_file = OpenOptions::new()
         .write(true)
@@ -223,6 +227,12 @@ pub fn copy_sparse_file<P: AsRef<Path>, Q: AsRef<Path>>(src: P, dst: Q) -> Resul
                     break;
                 }
 
+                if punch_hole && buffer[..bytes_read].iter().all(|&x| x == 0) {
+                    // all zero, don't copy it at all!
+                    dst_file.seek(SeekFrom::Current(bytes_read as i64))?;
+                    total_bytes_copied += bytes_read as u64;
+                    continue;
+                }
                 dst_file.write_all(&buffer[..bytes_read])?;
                 total_bytes_copied += bytes_read as u64;
             }
